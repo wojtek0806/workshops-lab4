@@ -1,2 +1,5 @@
-[f5-test]
-big-ip01.internal ansible_host=localhost ansible_python_interpreter=/usr/local/bin/python
+[f5-lab1]
+ltm1
+
+#[f5-lab2]
+# ltm2
