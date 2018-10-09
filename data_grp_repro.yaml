@@ -1,0 +1,28 @@
+---
+
+- name: Create profiles
+  hosts: f5-test
+  connection: local
+
+  vars:
+    f5_cli:
+      password: "admin"
+      server: "{{ ansible_host }}"
+      user: "admin"
+      validate_certs: "no"
+      server_port: "443"
+
+  tasks:
+    - name: Create a data group of addresses
+      bigip_data_group:
+        provider: "{{ f5_cli }}"
+        state: present
+        internal: yes
+        name: TEST_DG
+        records:
+          - key:  2001:a001:137:0:1:2:0:5/128
+            value: ''
+	  - key: 2001:a001:137:0:1:2:0:7/128
+            value: ''
+        type: address
+      delegate_to: localhost
