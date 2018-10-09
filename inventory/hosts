@@ -1,5 +1,2 @@
-[f5-lab1]
-192.168.1.1
-
-[f5-lab2]
-192.168.1.2
+[f5-test]
+big-ip01.internal ansible_host=localhost ansible_python_interpreter=/usr/local/bin/python
